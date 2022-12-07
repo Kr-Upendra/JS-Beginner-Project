@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clock</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="clockarea">
+        <div class="clock">
+          <span class="time num time__12">12</span>
+          <span class="time num time__11">11</span>
+          <span class="time num time__10">10</span>
+          <span class="time num time__9">9</span>
+          <span class="time num time__8">8</span>
+          <span class="time num time__7">7</span>
+          <span class="time num time__6">6</span>
+          <span class="time num time__5">5</span>
+          <span class="time num time__4">4</span>
+          <span class="time num time__3">3</span>
+          <span class="time num time__2">2</span>
+          <span class="time num time__1">1</span>
+          <div class="time point"></div>
+          <div class="time second" id="second"></div>
+          <div class="time minute" id="minute"></div>
+          <div class="time hour" id="hour"></div>
+        </div>
+        <div class="digitalClock">
+          <span class="dc_hour">05 :</span>
+          <span class="dc_minute">40 :</span>
+          <span class="dc_second">42</span>
+          <span class="dc_am"></span>
+        </div>
+      </div>
+    </div>
+    <select class="theme">
+      <option value="dim" class="options">Dim</option>
+      <option value="light" class="options">Light</option>
+      <option value="dark" class="options">Dark</option>
+    </select>
+    <button class="btn" onclick="changeColor()">Apply</button>
+  </body>
+  <script src="script.js"></script>
+</html>
