@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Word Counter</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="body">
+	<nav class="navbar">
+        <a class="logo" href="/">Counter</a>
+        <a href="#" class="abt-btn">About</a>
+    </nav>
+    <div class="container">
+        <div class="text-area">
+            <label class="label" for="texts">Write or paste your countable text here</label>
+            <textarea wrap="hard" required placeholder="write or paste text here" name="texts" cols="50" rows="15" class="textArea"></textarea>
+        </div>
+        <div class="btns">
+            <div class="counter-btns char-counter">
+                <p>Count Characters</p>
+                <button class="letter-count">Count</button>
+                <p>Counted characters are : <span class="result result-char">0</span></p>
+            </div>
+            <div class="counter-btns">
+                <p>Count words</p>
+                <button class="word-count">Count</button>
+                <p>Counted words are : <span class="result result-word">0</span></p>
+            </div>
+        </div>
+    </div>	
+    <div class="night-btn" data-black="false">
+        <img class="dark-img" src="./moon.png" alt="night mode">
+    </div>	
+	<script src="script.js"></script>
+  </body>
+</html
