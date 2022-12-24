@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+
+/* Poppins font  */
+:root {
+  --fontFamily: "Poppins", sans-serif;
+  --borderClr: 1px solid #ff581b42;
+  --boxShadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fontFamily);
+  font-size: 16px;
+  width: 100%;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1rem 2.55rem;
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+  border-bottom: var(--borderClr);
+  background-color: #fff;
+}
+
+.navbar > .logo {
+  margin-right: auto;
+  font-size: 1.75rem;
+  text-decoration: none;
+  color: #ff581b;
+  font-weight: 500;
+}
+
+.btn {
+  font-size: 0.95rem;
+  font-family: var(--fontFamily);
+  color: #fff;
+  background-color: #ff8457;
+  padding: 0.45rem 1rem;
+  border: 1px solid #ff581b;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.4s ease-in-out;
+  border-radius: 3rem;
+}
+
+.btn:hover {
+  background-color: #ff581b;
+}
+
+.section {
+  margin-top: 6.55rem;
+  padding: 1rem 10rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 8rem);
+  row-gap: 3rem;
+  justify-content: space-evenly;
+}
+
+.colors {
+  aspect-ratio: 1;
+  border-radius: 0.3rem;
+  box-shadow: var(--boxShadow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 1050px) {
+  .section {
+    padding: 1rem 8rem;
+  }
+  .cards {
+    grid-template-columns: repeat(3, 8rem);
+  }
+}
+
+@media (max-width: 800px) {
+  .section {
+    padding: 1rem 4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 1rem 3rem;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 8rem);
+  }
+}
+
+@media (max-width: 425px) {
+  .section {
+    padding: 1rem 1.85rem;
+    margin-top: 8rem;
+  }
+
+  .navbar {
+    padding: 1rem 2.05rem;
+  }
+  .navbar > .logo {
+    font-size: 1.25rem;
+  }
+
+  .cards {
+    grid-template-columns: repeat(1, 8rem);
+  }
+}
