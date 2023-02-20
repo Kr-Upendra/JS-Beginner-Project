@@ -77,3 +77,17 @@ window.addEventListener("scroll", function () {
     }, waitTime);
   }
 });
+
+window.addEventListener("touchmove", function () {
+  if (
+    !wait &&
+    window.innerHeight + window.pageYOffset >= document.body.offsetHeight
+  ) {
+    wait = true;
+    setTimeout(() => {
+      generateBoxes();
+      giveBGColor();
+      wait = false;
+    }, waitTime);
+  }
+});
