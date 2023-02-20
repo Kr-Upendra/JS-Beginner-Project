@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(#4d4dff, #2929ff);
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: "Raleway", sans-serif;
+}
+
+.about {
+  text-align: center;
+  padding-top: 2rem;
+  color: white;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 3rem 1rem 1rem;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.box {
+  border: 1px solid #adb7ff;
+  aspect-ratio: 1;
+  border-radius: 0.5rem;
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.3);
+  min-width: 136px;
+  display: grid;
+  place-content: center;
+  font-size: 1.35rem;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.box::after {
+  content: attr(data-content);
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: fit-content;
+  height: fit-content;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: -1;
+  font-size: 0.8rem;
+  color: black;
+  border-radius: 0.2rem;
+  border-top-right-radius: 0.5rem;
+  border: 1px solid #adb7ff;
+  padding: 0.5rem 1rem;
+  cursor: default;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.box:hover::after {
+  opacity: 1;
+}
+
+.active {
+  text-align: center;
+  padding-bottom: 1rem;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 600;
+}
+
+@media (max-width: 720px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 3rem 1.2rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 375px) {
+  .container {
+    padding: 3rem 1.5rem;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  h1 {
+    font-size: 1.3rem;
+  }
+}
