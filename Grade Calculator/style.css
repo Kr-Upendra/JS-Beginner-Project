@@ -2,14 +2,16 @@
 
 :root {
   --fontFamily: "Noto Sans Lao", sans-serif;
-  --themeColor: linear-gradient(
-    rgb(255, 155, 152),
-    rgba(250, 162, 162, 0.726),
-    rgba(255, 161, 161, 0.329)
+  --themeDark: linear-gradient(
+    rgba(15, 10, 10, 0.87),
+    rgba(0, 0, 0, 0.781),
+    rgba(0, 0, 0, 0.753)
   );
-  --textColor: #007406;
+  --darkRed: #270000;
   --whiteColor: #ffffffe1;
-  --lightBlack: #0000006e;
+  --lightBlack: #11a0b36e;
+  --boxBGColor: #0016167c;
+  --mobileFontSize: 0.85rem;
 }
 
 *,
@@ -21,8 +23,8 @@
 
 body {
   width: 100%;
+  background-image: var(--themeDark);
   height: 100vh;
-  background-image: var(--themeColor);
   font-size: 16px;
   font-weight: normal;
   font-family: var(--fontFamily);
@@ -63,38 +65,42 @@ a {
 
 .inputbox__label {
   display: block;
-  color: var(--textColor);
+  color: var(--whiteColor);
   font-size: 1.15rem;
   margin-left: 0.2rem;
+  margin-bottom: 0.15rem;
 }
 
 .inputbox__number {
-  padding: 0.65rem 0.5rem;
+  padding: 0.35rem 0.5rem;
   width: 50%;
-  border-top-left-radius: 0.75rem;
-  border-bottom-left-radius: 0.75rem;
+  border-top-left-radius: 0.35rem;
+  border-bottom-left-radius: 0.35rem;
   outline: none;
   border: 1px solid var(--lightBlack);
   font-size: 1rem;
-  color: var(--textColor);
+  color: var(--whiteColor);
+  background-color: rgb(51, 51, 51);
+  font-family: var(--fontFamily);
 }
 
 .inputbox__btn {
+  font-family: var(--fontFamily);
   font-size: 1rem;
   margin-left: -0.3rem;
-  padding: 0.65rem 0.5rem;
-  border-top-right-radius: 0.75rem;
-  border-bottom-right-radius: 0.75rem;
+  padding: 0.35rem 0.5rem;
+  border-top-right-radius: 0.35rem;
+  border-bottom-right-radius: 0.35rem;
   border: 1px solid var(--lightBlack);
-  background-color: #1bfc1b96;
-  color: var(--whiteColor);
+  background-color: #ffffff96;
+  color: var(--darkRed);
   transition: background-color 0.3s ease-in-out;
   cursor: pointer;
   width: 15%;
 }
 
 .inputbox__btn:hover {
-  background-color: #008000;
+  background-color: #ffffff;
 }
 
 input::-webkit-outer-spin-button,
@@ -113,8 +119,118 @@ input[type="number"] {
 
 .gridbox {
   margin-top: 2rem;
-  border: 1px solid red;
+  padding: 1rem 3rem;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
+}
+
+.box {
+  width: 100%;
+  border: 1px solid var(--lightBlack);
+  border-radius: 0.35rem;
+  box-shadow: 4px 8px 8px 1px rgba(0, 211, 183, 0.034);
+}
+
+.box__heading {
+  width: 100%;
+  padding: 0.7rem 0;
+  background-color: var(--boxBGColor);
+  border-top-left-radius: 0.35rem;
+  border-top-right-radius: 0.35rem;
+  display: grid;
+  place-content: center;
+  text-transform: uppercase;
+  color: var(--whiteColor);
+}
+
+.box__content {
+  padding: 0.85rem 0;
+  font-size: 1.25rem;
+  display: grid;
+  place-content: center;
+  border-bottom-right-radius: 0.35rem;
+  border-bottom-left-radius: 0.35rem;
+  color: var(--whiteColor);
+}
+
+@media (max-width: 1320px) {
+  .inputbox__btn {
+    width: 10%;
+  }
+
+  .inputbox__number {
+    width: 30%;
+  }
+}
+
+@media (max-width: 750px) {
+  body {
+    height: 100%;
+    padding-bottom: 3rem;
+  }
+  .inputbox__btn {
+    width: 15%;
+  }
+
+  .inputbox__number {
+    width: 50%;
+  }
+
+  .gridbox {
+    padding: 1rem 3rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .box__heading {
+    font-size: var(--mobileFontSize);
+  }
+}
+
+@media (max-width: 420px) {
+  .inputbox {
+    padding: 1rem 1.5rem;
+  }
+
+  .inputbox__number {
+    width: 60%;
+  }
+
+  .inputbox__btn {
+    width: 25%;
+  }
+
+  .gridbox {
+    padding: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 350px) {
+  .inputbox {
+    padding: 1rem 1.5rem;
+  }
+
+  .inputbox__number {
+    width: 70%;
+  }
+
+  .inputbox__btn {
+    width: 20%;
+  }
+
+  .inputbox__label {
+    font-size: var(--mobileFontSize);
+  }
+
+  .gridbox {
+    padding: 1rem;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+::selection {
+  background-color: #808080;
 }
