@@ -4,4 +4,4 @@ This is a part of <strong>JavaScript Beginner Projects</strong>. The idea of thi
 
 # URLS
 
-<strong>[LIVE SITE]()</strong>
+<strong>[LIVE SITE](https://resultcalculater.netlify.app/)</strong>
