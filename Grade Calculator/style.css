@@ -60,7 +60,7 @@ a {
 }
 
 .inputbox {
-  padding: 1rem 4rem;
+  padding: 1rem 3rem;
 }
 
 .inputbox__label {
@@ -71,9 +71,12 @@ a {
   margin-bottom: 0.15rem;
 }
 
+.input__field {
+  display: flex;
+}
+
 .inputbox__number {
   padding: 0.35rem 0.5rem;
-  width: 50%;
   border-top-left-radius: 0.35rem;
   border-bottom-left-radius: 0.35rem;
   outline: none;
@@ -87,7 +90,6 @@ a {
 .inputbox__btn {
   font-family: var(--fontFamily);
   font-size: 1rem;
-  margin-left: -0.3rem;
   padding: 0.35rem 0.5rem;
   border-top-right-radius: 0.35rem;
   border-bottom-right-radius: 0.35rem;
@@ -96,7 +98,6 @@ a {
   color: var(--darkRed);
   transition: background-color 0.3s ease-in-out;
   cursor: pointer;
-  width: 15%;
 }
 
 .inputbox__btn:hover {
@@ -118,7 +119,7 @@ input[type="number"] {
 }
 
 .gridbox {
-  margin-top: 2rem;
+  margin-top: 1rem;
   padding: 1rem 3rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -166,6 +167,8 @@ input[type="number"] {
   color: rgba(255, 255, 255, 0.308);
   text-align: center;
   word-spacing: 2px;
+  display: absolute;
+  bottom: 0;
 }
 
 .footer strong,
@@ -173,27 +176,13 @@ input[type="number"] {
   color: rgb(255, 255, 255);
 }
 
-@media (max-width: 1320px) {
-  .inputbox__btn {
-    width: 10%;
-  }
-
-  .inputbox__number {
-    width: 30%;
-  }
+.footer a {
+  text-decoration: underline;
 }
 
 @media (max-width: 750px) {
   body {
     height: 100%;
-    padding-bottom: 3rem;
-  }
-  .inputbox__btn {
-    width: 15%;
-  }
-
-  .inputbox__number {
-    width: 50%;
   }
 
   .gridbox {
@@ -216,42 +205,28 @@ input[type="number"] {
   }
 }
 
-@media (max-width: 420px) {
-  .inputbox {
-    padding: 1rem 1.5rem;
-  }
-
-  .inputbox__number {
-    width: 60%;
-  }
-
-  .inputbox__label {
+@media (max-width: 450px) {
+  .inputbox__label,
+  .inputbox__number,
+  .inputbox__btn {
     font-size: var(--mobileFontSize);
   }
 
-  .inputbox__btn {
-    width: 25%;
+  .inputbox {
+    padding: 1rem;
   }
 
   .gridbox {
     padding: 1rem;
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .footer {
+    padding: 1rem;
+  }
 }
 
 @media (max-width: 350px) {
-  .inputbox {
-    padding: 1rem 1.5rem;
-  }
-
-  .inputbox__number {
-    width: 70%;
-  }
-
-  .inputbox__btn {
-    width: 20%;
-  }
-
   .gridbox {
     padding: 1rem;
     grid-template-columns: repeat(1, 1fr);
@@ -259,6 +234,14 @@ input[type="number"] {
 
   .grades__are {
     grid-area: 1 / span 1;
+  }
+
+  .inputbox__number {
+    width: 100%;
+  }
+
+  .inputbox__btn {
+    padding: 0 1.25rem;
   }
 }
 
