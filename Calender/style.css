@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&display=swap");
+
+:root {
+  --fontFamily: "Poppins", sans-serif;
+  --primaryWhite: #ffffff;
+  --boxShadow: rgba(0, 0, 0, 0.678) 0 10px 20px 0;
+  --lowBoxShadow: rgba(0, 0, 0, 0.123) 0 5px 10px 0;
+  --darkBlue: rgb(0, 0, 68);
+  --dayBorderColor: rgb(0, 151, 238);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 15px;
+  font-family: var(--fontFamily);
+  width: 100%;
+  overflow-x: hidden;
+  background-image: radial-gradient(
+    circle,
+    rgba(14, 175, 205, 1) 35%,
+    rgba(0, 130, 157, 1) 100%
+  );
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.navbar {
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+}
+
+.navbar h5 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--primaryWhite);
+}
+
+.navbar::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 10%;
+  height: 2px;
+  animation: animate 50s infinite ease-in-out;
+  border-radius: 3rem;
+  background-color: var(--primaryWhite);
+}
+
+@keyframes animate {
+  0% {
+    left: 0;
+  }
+  20% {
+    width: 20%;
+  }
+  40% {
+    width: 10%;
+  }
+  50% {
+    left: 90%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+.container {
+  margin: 3rem auto;
+  width: 50%;
+  height: 450px;
+  border-radius: 1rem;
+  padding: 1rem;
+  position: relative;
+  box-shadow: var(--boxShadow);
+}
+
+.month-name {
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.month-name h6 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--primaryWhite);
+  display: inline-block;
+  border-bottom: solid var(--primaryWhite);
+  border-width: 2px;
+  padding: 0 2rem;
+}
+
+.month-name h6:last-child {
+  float: right;
+}
+
+.calender__container {
+  box-shadow: var(--lowBoxShadow);
+  width: 70%;
+  height: 300px;
+  margin: 3rem auto;
+  border-radius: 1rem;
+  position: relative;
+  padding: 0.5rem;
+}
+
+.el-month {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 1rem;
+  display: none;
+}
+
+.day__container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.day-name {
+  width: 20%;
+  padding: 0.5rem 0;
+  text-align: center;
+  cursor: default;
+  user-select: none;
+  color: var(--darkBlue);
+  background-color: var(--primaryWhite);
+  font-weight: 500;
+}
+
+.current-day {
+  background-color: var(--dayBorderColor);
+  color: var(--primaryWhite);
+}
+
+.day-name:last-child {
+  border-top-right-radius: 1rem;
+}
+
+.day-name:first-child {
+  border-top-left-radius: 1rem;
+}
+
+.date__container {
+  height: calc(100% - 2.6rem);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.row:last-child {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.el-dates {
+  width: 20%;
+  padding: 0.5rem 0;
+  text-align: center;
+  cursor: default;
+  user-select: none;
+  color: var(--primaryWhite);
+  font-weight: 500;
+  border: 2px solid transparent;
+  transition: all 0.4s ease-in-out;
+  border-radius: 5px;
+}
+
+.el-dates:hover {
+  border: 2px solid var(--primaryWhite);
+  color: var(--darkBlue);
+}
+
+.current-date {
+  color: var(--darkBlue);
+  background-color: var(--primaryWhite);
+  box-shadow: rgba(0, 0, 0, 0.192) 0 5px 10px 0;
+}
+
+.btns {
+  border: 2px solid var(--primaryWhite);
+  width: 40px;
+  aspect-ratio: 1;
+  position: absolute;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primaryWhite);
+  z-index: 1;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+  user-select: none;
+}
+
+.btns:hover {
+  color: var(--darkBlue);
+  border: 2px solid transparent;
+  width: 45px;
+}
+
+.el-prev {
+  top: 48%;
+  left: 5%;
+}
+
+.el-next {
+  top: 48%;
+  right: 5%;
+}
+
+.btns::after {
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 0;
+  height: 0;
+  background-color: var(--primaryWhite);
+  border-radius: inherit;
+  transition: all 0.4s ease-in-out;
+  z-index: -1;
+}
+
+.btns:hover::after {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    width: 90%;
+  }
+}
