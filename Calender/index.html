@@ -13,10 +13,10 @@
     </nav>
     <div class="container">
       <div class="month-name">
-        <h6>June</h6>
-        <h6>2023</h6>
+        <h6 class="el-month-name">June</h6>
+        <h6 class="el-year">2023</h6>
       </div>
-      <div class="el-prev btns" onclick="plusSlides(-1)">&#11164;</div>
+      <div class="el-prev btns" id="prev-cal">&#11164;</div>
       <div class="calender__container">
         <div class="el-month">
           <div class="day__container">
@@ -28,76 +28,10 @@
             <span class="day-name">FRI</span>
             <span class="day-name">SAT</span>
           </div>
-          <div class="date__container">
-            <div class="row day__container">
-              <div class="el-dates">28</div>
-              <div class="el-dates">29</div>
-              <div class="el-dates">30</div>
-              <div class="el-dates">31</div>
-              <div class="el-dates">1</div>
-              <div class="el-dates">2</div>
-              <div class="el-dates">3</div>
-            </div>
-            <div class="row day__container">
-              <div class="el-dates">4</div>
-              <div class="el-dates">5</div>
-              <div class="el-dates">6</div>
-              <div class="el-dates">7</div>
-              <div class="el-dates current-date">8</div>
-              <div class="el-dates">9</div>
-              <div class="el-dates">10</div>
-            </div>
-            <div class="row day__container">
-              <div class="el-dates">11</div>
-              <div class="el-dates">12</div>
-              <div class="el-dates">13</div>
-              <div class="el-dates">14</div>
-              <div class="el-dates">15</div>
-              <div class="el-dates">16</div>
-              <div class="el-dates">17</div>
-            </div>
-            <div class="row day__container">
-              <div class="el-dates">18</div>
-              <div class="el-dates">19</div>
-              <div class="el-dates">20</div>
-              <div class="el-dates">21</div>
-              <div class="el-dates">22</div>
-              <div class="el-dates">23</div>
-              <div class="el-dates">24</div>
-            </div>
-            <div class="row day__container">
-              <div class="el-dates">25</div>
-              <div class="el-dates">26</div>
-              <div class="el-dates">27</div>
-              <div class="el-dates">28</div>
-              <div class="el-dates">29</div>
-              <div class="el-dates">30</div>
-              <div class="el-dates">1</div>
-            </div>
-            <div class="row day__container">
-              <div class="el-dates">2</div>
-              <div class="el-dates">3</div>
-              <div class="el-dates">4</div>
-              <div class="el-dates">5</div>
-              <div class="el-dates">6</div>
-              <div class="el-dates">7</div>
-              <div class="el-dates">8</div>
-            </div>
-          </div>
+          <div class="date__container"></div>
         </div>
-        <div class="el-month">FEB</div>
-        <div class="el-month">MAR</div>
-        <div class="el-month">APR</div>
-        <div class="el-month">MAY</div>
-        <div class="el-month">JUN</div>
-        <div class="el-month">JUL</div>
-        <div class="el-month">AUG</div>
-        <div class="el-month">SEP</div>
-        <div class="el-month">OCT</div>
-        <div class="el-month">NOV</div>
-        <div class="el-month">DEC</div>
       </div>
-      <div class="el-next btns" onclick="plusSlides(1)">&#11166;</div>
+      <div class="el-next btns" id="next-cal">&#11166;</div>
     </div>
     <script src="script.js"></script>
   </body>

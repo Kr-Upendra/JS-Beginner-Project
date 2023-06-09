@@ -7,6 +7,8 @@
   --lowBoxShadow: rgba(0, 0, 0, 0.123) 0 5px 10px 0;
   --darkBlue: rgb(0, 0, 68);
   --dayBorderColor: rgb(0, 151, 238);
+  --unactiveDate: #ccfff0b4;
+  --unActiveHoverColor: #2b2b2b;
 }
 
 * {
@@ -110,6 +112,7 @@ body {
   border-radius: 1rem;
   position: relative;
   padding: 0.5rem;
+  /* display: none; */
 }
 
 .el-month {
@@ -119,7 +122,6 @@ body {
   top: 0;
   left: 0;
   border-radius: 1rem;
-  display: none;
 }
 
 .day__container {
@@ -155,24 +157,16 @@ body {
   height: calc(100% - 2.6rem);
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
   width: 100%;
-  aspect-ratio: 1;
-}
-
-.row:last-child {
-  border-bottom-left-radius: 1rem;
-  border-bottom-right-radius: 1rem;
 }
 
 .el-dates {
-  width: 20%;
   padding: 0.5rem 0;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: default;
   user-select: none;
   color: var(--primaryWhite);
@@ -180,6 +174,10 @@ body {
   border: 2px solid transparent;
   transition: all 0.4s ease-in-out;
   border-radius: 5px;
+}
+
+.el-dates[data-unactive="true"] {
+  color: var(--unactiveDate);
 }
 
 .el-dates:hover {
